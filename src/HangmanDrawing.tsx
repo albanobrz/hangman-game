@@ -17,14 +17,15 @@ const leftLeg = (
     <div style={{width: "100px", height: "10px", position: "absolute", top: "210px", right: "-90px", background: "black", rotate: "120deg", transformOrigin: "left bottom"}}/>
 )
 
-export const HangmanDrawing = () => {
+type HangmanDrawingProps = {
+    numberOfGuesses: number
+}
+
+const bodyParts = [head, body, rightArm, leftArm, rightLeg, leftLeg]
+
+export const HangmanDrawing = ({numberOfGuesses}: HangmanDrawingProps) => {
     return <div style={{position: "relative"}}>
-        {head}
-        {body}
-        {rightArm}
-        {leftArm}
-        {rightLeg}
-        {leftLeg}
+        {bodyParts.slice(0, numberOfGuesses)}
 
         <div style={{height: "50px", width: "10px", background: "black", position: 'absolute', top: 0, right: 0}}/>
         <div style={{height: "10px", width: "200px", background: "black", marginLeft: "120px"}}/>

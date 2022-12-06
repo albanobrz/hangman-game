@@ -28,7 +28,13 @@ const keys = [
 "y",
 "z",]
 
-export const Keyboard = () => {
+type KeyboardProps = {
+    activeLetters:string 
+    inactiveLetters: string
+    addGuessedLetter: (letter: string) => void
+}
+
+export const Keyboard = ({activeLetters, inactiveLetters, addGuessedLetter}:KeyboardProps) => {
     return <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr)", gap: ".5rem"}}>
         {keys.map((key) => (
             <button key={key} className={`${style.btn}`}>{key}</button>
