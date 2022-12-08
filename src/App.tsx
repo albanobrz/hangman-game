@@ -79,6 +79,7 @@ function App() {
         style={{
           fontSize: "2rem",
           textAlign: "center",
+          color: "#ddd"
         }}
       >
         {isWinner && "Parabéns, você ganhou :)"}
